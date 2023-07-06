@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdurmaz <gdurmaz@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gdurmaz <gdurmaz@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:25:56 by gdurmaz           #+#    #+#             */
-/*   Updated: 2023/07/06 19:10:54 by gdurmaz          ###   ########.fr       */
+/*   Updated: 2023/07/06 19:50:50 by gdurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ size_t	put_count_nbr_base(int nbr, char *base)
 		nbr *= -1;
 	}
 	if (nbr > base_len)
-		counter += put_count_nbr_base(nbr/base_len, *base);
+		counter += put_count_nbr_base(nbr/base_len, base);
 	counter += put_count_char(base[nbr % base_len]);
 	return (counter);
 }
