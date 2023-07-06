@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdurmaz <gdurmaz@42.fr>                    +#+  +:+       +#+        */
+/*   By: gdurmaz <gdurmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 15:52:06 by gdurmaz           #+#    #+#             */
-/*   Updated: 2023/07/06 16:42:35 by gdurmaz          ###   ########.fr       */
+/*   Updated: 2023/07/06 19:35:47 by gdurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -22,4 +25,13 @@
 # define POINTER_PREFIX "0x"
 # define NIL_DISPLAY "(nil)"
 
+int     ft_printf(const char *s, ...);
+//size_t	print_count_char(char s);
+//size_t	print_count_args(char s, va_list args);
+size_t	put_count_char(int s);
+size_t	put_count_str(char *s);
+size_t	put_count_nbr_base(int nbr, char *base);
 
+size_t	ft_strlen(const char *str);
+
+#endif
