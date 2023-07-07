@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdurmaz <gdurmaz@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gdurmaz <gdurmaz@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 15:52:06 by gdurmaz           #+#    #+#             */
-/*   Updated: 2023/07/06 19:35:47 by gdurmaz          ###   ########.fr       */
+/*   Updated: 2023/07/07 14:16:50 by gdurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int     ft_printf(const char *s, ...);
 size_t	put_count_char(int s);
 size_t	put_count_str(char *s);
 size_t	put_count_nbr_base(int nbr, char *base);
-
+size_t	put_count_unbr_base(unsigned int nbr, char *base);
+size_t	put_count_ptr(void *ptr,char *base, int flag);
 size_t	ft_strlen(const char *str);
 
 #endif
