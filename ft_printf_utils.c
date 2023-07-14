@@ -6,7 +6,7 @@
 /*   By: gdurmaz <gdurmaz@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:25:56 by gdurmaz           #+#    #+#             */
-/*   Updated: 2023/07/07 13:46:58 by gdurmaz          ###   ########.fr       */
+/*   Updated: 2023/07/14 15:02:32 by gdurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,18 @@ size_t	put_count_str(char *s)
 size_t	put_count_nbr_base(int nbr, char *base)
 {
 	size_t	counter;
-	int	base_len;
+	int		base_len;
 
 	nbr = (long)nbr;
 	base_len = ft_strlen(base);
+	counter = 0;
 	if (nbr < 0)
 	{
 		counter += put_count_char('-');
 		nbr *= -1;
 	}
 	if (nbr > base_len)
-		counter += put_count_nbr_base(nbr/base_len, base);
+		counter += put_count_nbr_base(nbr / base_len, base);
 	counter += put_count_char(base[nbr % base_len]);
 	return (counter);
 }
@@ -57,17 +58,18 @@ size_t	put_count_nbr_base(int nbr, char *base)
 size_t	put_count_unbr_base(unsigned int nbr, char *base)
 {
 	size_t	counter;
-	int		base_len;
+	size_t	base_len;
 
 	nbr = (long long)nbr;
 	base_len = ft_strlen(base);
+	counter = 0;
 	if (nbr > base_len)
-		counter += put_count_nbr_base(nbr/base_len, base);
+		counter += put_count_nbr_base(nbr / base_len, base);
 	counter += put_count_char(base[nbr % base_len]);
 	return (counter);
 }
 
-size_t	put_count_ptr(void *ptr,char *base, int flag)
+size_t	put_count_ptr(void *ptr, char *base, int flag)
 {
 	unsigned long long	nbr;
 	size_t				base_length;
