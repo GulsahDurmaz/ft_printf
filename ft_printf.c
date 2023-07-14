@@ -6,7 +6,7 @@
 /*   By: gdurmaz <gdurmaz@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 16:04:04 by gdurmaz           #+#    #+#             */
-/*   Updated: 2023/07/14 15:01:14 by gdurmaz          ###   ########.fr       */
+/*   Updated: 2023/07/14 18:16:21 by gdurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,15 @@ int	ft_printf(const char *s, ...)
 	return (counter);
 }
 /*
+#include <limits.h>
 int main()
 {
+	int a;
+	int b;
+
+	a = printf("%d \n", INT_MIN);
+	b = ft_printf("%d \n", INT_MIN);
+
 	int count;
 	int count2;
 	int count3;
@@ -100,6 +107,5 @@ int main()
 	printf("%d \n", count10);
 	count11 = ft_printf("%p \n", count9);
 	printf("%d \n", count11);
-
 }
 */

@@ -6,7 +6,7 @@
 /*   By: gdurmaz <gdurmaz@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:25:56 by gdurmaz           #+#    #+#             */
-/*   Updated: 2023/07/14 15:02:32 by gdurmaz          ###   ########.fr       */
+/*   Updated: 2023/07/14 18:15:51 by gdurmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,32 +40,34 @@ size_t	put_count_nbr_base(int nbr, char *base)
 {
 	size_t	counter;
 	int		base_len;
+	long	long_nbr;
 
-	nbr = (long)nbr;
+	long_nbr = nbr;
 	base_len = ft_strlen(base);
 	counter = 0;
-	if (nbr < 0)
+	if (long_nbr < 0)
 	{
 		counter += put_count_char('-');
-		nbr *= -1;
+		long_nbr *= -1;
 	}
-	if (nbr > base_len)
-		counter += put_count_nbr_base(nbr / base_len, base);
-	counter += put_count_char(base[nbr % base_len]);
+	if (long_nbr >= base_len)
+		counter += put_count_nbr_base(long_nbr / base_len, base);
+	counter += put_count_char(base[long_nbr % base_len]);
 	return (counter);
 }
 
 size_t	put_count_unbr_base(unsigned int nbr, char *base)
 {
-	size_t	counter;
-	size_t	base_len;
+	size_t				counter;
+	size_t				base_len;
+	unsigned long long	long_nbr;
 
-	nbr = (long long)nbr;
+	long_nbr = nbr;
 	base_len = ft_strlen(base);
 	counter = 0;
-	if (nbr > base_len)
-		counter += put_count_nbr_base(nbr / base_len, base);
-	counter += put_count_char(base[nbr % base_len]);
+	if (long_nbr >= base_len)
+		counter += put_count_nbr_base(long_nbr / base_len, base);
+	counter += put_count_char(base[long_nbr % base_len]);
 	return (counter);
 }
 
